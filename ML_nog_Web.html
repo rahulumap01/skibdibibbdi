@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moonlight Foundation - Nourishing Hope, One Meal at a Time</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #FF6B35;
+            --secondary: #2E86AB;
+            --accent: #F9C74F;
+            --light: #F8F9FA;
+            --dark: #212529;
+            --success: #4CAF50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: #e55a2b;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #1f6a8a;
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--dark);
+        }
+        
+        .btn-accent:hover {
+            background-color: #e6b63e;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 500;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+           size : 40px; 
+            background-image: url('C:\Users\S3\OneDrive\Desktop\rahul space\nog web\ML T-shirts  (2).png');  
+            color: var(--primary);  
+         
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .logo-text span {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 180px 0 100px;
+            margin-top: 80px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text h2 {
+            text-align: left;
+        }
+        
+        .about-text h2:after {
+            left: 0;
+            transform: none;
+        }
+        
+        .foundation-date {
+            background-color: var(--light);
+            padding: 15px;
+            border-left: 4px solid var(--primary);
+            margin: 20px 0;
+        }
+        
+        /* Impact Section */
+        .impact {
+            background-color: var(--light);
+        }
+        
+        .impact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .impact-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .impact-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .impact-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        /* Sustainability Section */
+        .sustainability {
+            background-color: white;
+        }
+        
+        .sustainability-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .sustainability-list {
+            list-style: none;
+        }
+        
+        .sustainability-list li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .sustainability-list i {
+            color: var(--success);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .sustainability-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .sustainability-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Volunteer Section */
+        .volunteer {
+            background: linear-gradient(rgba(46, 134, 171, 0.9), rgba(46, 134, 171, 0.9)), url('https://images.unsplash.com/photo-1559027615-cfa462872979?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .volunteer h2 {
+            color: white;
+        }
+        
+        .volunteer h2:after {
+            background-color: white;
+        }
+        
+        .volunteer p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .volunteer-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .about-content, .sustainability-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-text h2, .sustainability-text h2 {
+                text-align: center;
+            }
+            
+            .about-text h2:after, .sustainability-text h2:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: left 0.3s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-btns .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .impact-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class=""> <img src="logo image.png" alt="Moonlight Foundation Logo"; style="width: 90px; padding-right: 10px;" ></i>
+                    
+                    <div class="logo-text"><img src="ml title.png" alt="Moonlight Foundation Logo"; style="width: 230px; padding-right: 10px;" ></div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#impact">Our Impact</a></li>
+                    <li><a href="#sustainability">Sustainability</a></li>
+                    <li><a href="#volunteer">Volunteer</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Nourishing Hope, One Meal at a Time</h1>
+            <p>Moonlight Foundation is dedicated to providing nutritious meals to hungry children and families in need, while implementing sustainable practices to protect our planet.</p>
+            <div class="hero-btns">
+                <a href="#volunteer" class="btn">Become a Volunteer</a>
+                <a href="#about" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Children receiving food">
+                </div>
+                <div class="about-text">
+                    <h2>About Moonlight Foundation</h2>
+                    <p>Moonlight Foundation was established on july 24, 2025 with a simple yet powerful mission: to ensure no child goes to bed hungry. We believe that access to nutritious food is a basic human right and work tirelessly to provide meals to street children and families in need.</p>
+                    <p>Our approach combines immediate hunger relief with long-term sustainable solutions, creating a positive impact on both people and the planet.</p>
+                    <div class="foundation-date">
+                        <p><strong>Established:</strong> july 24, 2025</p>
+                    </div>
+                    <a href="#impact" class="btn btn-accent">See Our Impact</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact" id="impact">
+        <div class="container">
+            <h2>Our Impact</h2>
+            <div class="impact-cards">
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="impact-number">500+</div>
+                    <h3>Meals Served Monthly</h3>
+                    <p>We provide over 500+ nutritious meals each month to street children and families facing food insecurity.</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div class="impact-number">50+</div>
+                    <h3>Active Volunteers</h3>
+                    <p>Our dedicated volunteers work tirelessly to prepare and distribute meals to those in need.</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="impact-number">80%</div>
+                    <h3>Local Sourcing</h3>
+                    <p>We prioritize sourcing ingredients from local farmers and producers to support our community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Members Section -->
+    <section class="members" id="members">
+        <div class="container">
+            <h2>Our Team & Members</h2>
+            <p class="section-subtitle">Meet the dedicated individuals who make our mission possible. From board members to volunteers and partners, each plays a vital role in nourishing hope in our community.</p>
+            
+            <div class="member-categories">
+                <div class="category-tabs">
+                    <button class="category-btn active" data-category="board">Board Members</button>
+                    <button class="category-btn" data-category="volunteers">Core Volunteers</button>
+                    <button class="category-btn" data-category="partners">Partners</button>
+                </div>
+                
+                <!-- Board Members -->
+                <div class="members-grid active" id="board-members">
+                    <div class="member-card">
+                        <div class="member-img">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="member-info">
+                            <h3>@ohsec -___-</h3>
+                            <p class="member-role">IT-Depertment Hero From the realms of shadows </p>
+                            <p class="member-desc">An unsung anonymous hero helping us from dark shadows and protecting us from all sides</div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-img">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="member-info">
+                            <h3>moon-2478</h3>
+                            <p class="member-role">Vice President</p>
+                            <p class="member-desc">Nutrition specialist ensuring every meal meets health standards for growing children. Leads our meal planning team.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-img">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="member-info">
+                            <h3>Rahul Umap</h3>
+                            <p class="member-role">Treasurer</p>
+                            <p class="member-desc">Financial expert managing resources to maximize impact per donation. Ensures transparent financial operations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-img">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="member-info">
+                            <h3>Dr. monica </h3>
+                            <p class="member-role">Medical Advisor</p>
+                            <p class="member-desc">Pediatrician ensuring our meal plans meet nutritional requirements for children's growth and development.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <!-- Core Volunteers -->
+                <div class="members-grid" id="volunteers-members">
+                    <div class="member-card">
+                        <div class="member-img">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="member-info">
+                            <h3>Utkarsh koli</h3>
+                            <p class="member-role">Meal Coordinator</p>
+                            <p class="member-desc">Organizes weekly meal preparation and distribution for 100+ children. Manages volunteer kitchen teams.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-img">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="member-info">
+                            <h3>Ojas & tanish</h3>
+                            <p class="member-role">Logistics Heads</h3>
+                            <p class="member-desc">Manages transportation and supply chain for efficient operations across 5 distribution centers.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-img">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="member-info">
+                            <h3>Neha Gupta</h3>
+                            <p class="member-role">Community Outreach</h3>
+                            <p class="member-desc">Connects with local communities to identify children in need and build trust relationships.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-img">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="member-info">
+                            <h3>Parth & nisha</h3>
+                            <p class="member-role">Accountants</p>
+                            <p class="member-desc">Maintain accurate financial records by updating ledgers, journals, and accounting software.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Partners -->
+                <div class="members-grid" id="partners-members">
+                    <div class="member-card partner-card">
+                        <div class="member-img partner-img">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <div class="member-info">
+                            <h3>Green Farms Organics</h3>
+                            <p class="member-role">Food Supplier Partner</p>
+                            <p class="member-desc">Provides fresh, organic produce at discounted rates. Committed to sustainable farming practices.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="member-card partner-card">
+                        <div class="member-img partner-img">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <div class="member-info">
+                            <h3>City Public Schools</h3>
+                            <p class="member-role">Distribution Partner</p>
+                            <p class="member-desc">Allows meal distribution at 5+ school locations, reaching children most in need.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="member-card partner-card">
+                        <div class="member-img partner-img">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <div class="member-info">
+                            <h3>Rotary Club</h3>
+                            <p class="member-role">Funding Partner</p>
+                            <p class="member-desc">Supports monthly meal programs for 50+ children through regular donations and volunteer support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="join-team">
+                <h3>Want to Join Our Team?</h3>
+                <p>We're always looking for passionate individuals to help us fight hunger. Your time and skills can make a real difference in children's lives.</p>
+                <a href="#volunteer" class="btn">Become a Volunteer</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Add this CSS to your style section -->
+    <style>
+    /* Members Section Styles */
+    .members {
+        background-color: var(--light);
+        padding: 80px 0;
+    }
+    
+    .section-subtitle {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 50px;
+        color: #666;
+        font-size: 1.1rem;
+    }
+    
+    .member-categories {
+        margin-bottom: 50px;
+    }
+    
+    .category-tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .category-btn {
+        padding: 12px 25px;
+        background-color: white;
+        border: 2px solid var(--secondary);
+        color: var(--secondary);
+        border-radius: 50px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .category-btn.active {
+        background-color: var(--secondary);
+        color: white;
+    }
+    
+    .category-btn:hover:not(.active) {
+        background-color: rgba(46, 134, 171, 0.1);
+    }
+    
+    .members-grid {
+        display: none;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    
+    .members-grid.active {
+        display: grid;
+    }
+    
+    .member-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 25px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .member-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .member-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: var(--light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        flex-shrink: 0;
+        border: 3px solid var(--primary);
+    }
+    
+    .member-img i {
+        font-size: 2.5rem;
+        color: var(--primary);
+    }
+    
+    .partner-img {
+        background-color: #e8f4fc;
+        border-color: var(--secondary);
+    }
+    
+    .partner-img i {
+        color: var(--secondary);
+    }
+    
+    .member-info h3 {
+        margin-bottom: 5px;
+        font-size: 1.2rem;
+        color: var(--dark);
+    }
+    
+    .member-role {
+        color: var(--primary);
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+    }
+    
+    .partner-card .member-role {
+        color: var(--secondary);
+    }
+    
+    .member-desc {
+        color: #666;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .join-team {
+        text-align: center;
+        background: linear-gradient(135deg, var(--secondary), #1f6a8a);
+        padding: 50px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(46, 134, 171, 0.2);
+        max-width: 700px;
+        margin: 50px auto 0;
+        color: white;
+    }
+    
+    .join-team h3 {
+        color: white;
+        margin-bottom: 15px;
+        font-size: 1.8rem;
+    }
+    
+    .join-team p {
+        margin-bottom: 25px;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.1rem;
+    }
+    
+    /* Responsive for Members Section */
+    @media (max-width: 768px) {
+        .members-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .member-card {
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .member-img {
+            margin-right: 0;
+            margin-bottom: 15px;
+        }
+        
+        .category-tabs {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .category-btn {
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .join-team {
+            padding: 30px 20px;
+        }
+    }
+    </style>
+    
+    <!-- Add this JavaScript to your script section -->
+    <script>
+    // Members Section Tabs Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const memberGrids = document.querySelectorAll('.members-grid');
+        
+        if(categoryBtns.length > 0) {
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons and grids
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    memberGrids.forEach(grid => grid.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+                    
+                    // Show corresponding grid
+                    const category = btn.getAttribute('data-category');
+                    document.getElementById(`${category}-members`).classList.add('active');
+                });
+            });
+        }
+    });
+    </script>
+
+    <!-- Sustainability Section -->
+    <section class="sustainability" id="sustainability">
+        <div class="container">
+            <div class="sustainability-content">
+                <div class="sustainability-text">
+                    <h2>Sustainability Efforts</h2>
+                    <p>At Moonlight Foundation, we're committed to protecting our planet while feeding those in need. Our sustainability initiatives include:</p>
+                    <ul class="sustainability-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Local Produce Sourcing</h4>
+                                <p>We partner with local farmers to source fresh, seasonal ingredients, reducing food miles and supporting our local economy.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Food Waste Reduction</h4>
+                                <p>We implement efficient meal planning and distribution systems to minimize food waste throughout our operations.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Biodegradable Packaging</h4>
+                                <p>All our meals are served in eco-friendly, biodegradable packaging to reduce environmental impact.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sustainability-img">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="Sustainable farming">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Section -->
+    <section class="volunteer" id="volunteer">
+        <div class="container">
+            <h2>Join Our Mission</h2>
+            <p>Your time and skills can make a real difference in the lives of hungry children. Join our volunteer team and help us nourish hope in our community.</p>
+            
+            <div class="volunteer-form">
+                <h3>Volunteer Sign-Up</h3>
+                <form id="volunteerForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="interest">Area of Interest</label>
+                        <select id="interest" class="form-control" required>
+                            <option value="">Select an option</option>
+                            <option value="meal-prep">Meal Preparation</option>
+                            <option value="distribution">Food Distribution</option>
+                            <option value="fundraising">Fundraising</option>
+                            <option value="admin">Administrative Support</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-accent" style="width: 100%;">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Moonlight Foundation</h3>
+                    <p>Nourishing Hope, One Meal at a Time. We're committed to fighting hunger and promoting sustainability in our community.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>              
+                        <a href="https://www.instagram.com/moonlight24.ngo?igsh=eHNzNjYzcXdhY2sx"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#impact">Our Impact</a></li>
+                        <li><a href="#sustainability">Sustainability</a></li>
+                        <li><a href="#volunteer">Volunteer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Maharashtra State, City thane, india</li>
+                        <li><i class="fas fa-phone"></i> wait for it</li>
+                        <li><i class="fas fa-envelope"></i> moonlightngo24@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Moonlight Foundation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Volunteer Form Submission
+        const volunteerForm = document.getElementById('volunteerForm');
+        
+        volunteerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const interest = document.getElementById('interest').value;
+            
+            // In a real application, you would send this data to a server
+            // For this example, we'll just show an alert
+            alert(`Thank you, ${name}! Your volunteer application has been submitted. We will contact you at ${email} about ${interest} opportunities.`);
+            
+            // Reset form
+            volunteerForm.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
